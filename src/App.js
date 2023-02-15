@@ -12,7 +12,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to FIAP 155GTI-JAO</h1>
         </header>
         <p className="App-intro">
-          Teste GIThub, curso DevOps, DevSecOps <code>src/App.js</code> and save to reload.
+          Teste GIThub,  <code>src/App.js</code> curso DevOps, DevSecOps.
         </p>
       </div>
     );
