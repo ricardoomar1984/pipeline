@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                sh 'npm install -D sonarqube-scanner'
             }
         }
         stage('Test') {
@@ -19,11 +19,6 @@ pipeline {
                 sh 'chmod +x ./jenkins/scripts/test.sh'            
                 sh './jenkins/scripts/test.sh'
             }
-        }
-        stage('Gradle Static Analysis'){
-        withSonarQubeEnv {
-            sh "./gradlew clean sonarqube"
-        }
         }
         stage('Deploy for production') {
             steps {
