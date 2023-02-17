@@ -20,6 +20,10 @@ pipeline {
                 sh './jenkins/scripts/test.sh'
             }
         }
+        stage 'Gradle Static Analysis'
+        withSonarQubeEnv {
+            sh "./gradlew clean sonarqube"
+        }            
         stage('Deploy for production') {
             steps {
                 sh 'chmod -R +x ./jenkins/scripts'
